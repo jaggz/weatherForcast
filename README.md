@@ -16,14 +16,14 @@
 ## Usage
 To Use This weatherForcast Application, Please copy that link given in the WEBpage link inside Questions Section and Do the followings:
 - Paste that Link in the Browser.
-- When Page properly rendered on the screen pls type city name in the search Box.
+- When Page properly rendered on the screen pls type `City Name` in the Search Box.
     ![pagelayout](assets/images/pagelayout.png)
 - Then press Search button or Enter.
 - As I press button or Enter Im gonna see the page with current weather and next Five days weather on the same page 
-    ![pagelayout](assets/images/weatherpage.png)
+    ![weatherpage](assets/images/weatherpage.png)
 - The city name searched would be added to the page and I can see that city name below that search Box with delete button on the right side.
 - As I click on that saved city name then its gona show the Current and next Five days weather on the same Page.
-- If I Click Delete Button then its gona delete that "Saved City" from the Page.    
+- If I Click Delete Button then its gona delete that `Saved City` from the Page.    
 
 ## license 
 - ![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)
