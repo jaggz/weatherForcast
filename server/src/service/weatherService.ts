@@ -88,7 +88,7 @@ class WeatherService {
   }
   // TODO: Create buildGeocodeQuery method
   private buildGeocodeQuery(): string {
-    const query:string = `${this.baseURL}/geo/1.0/direct?q=${this.cityName}&appid=${this.apiKey}`;// query for coordinates of city
+    const query:string = `${this.baseURL}/geo/1.0/direct?q=${this.cityName},US&appid=${this.apiKey}`;// query for coordinates of city
     return query;
   }
   // TODO: Create buildWeatherQuery method
