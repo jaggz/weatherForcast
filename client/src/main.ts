@@ -48,7 +48,7 @@ const fetchWeather = async (cityName: string) => {
   console.log('weatherData: ', weatherData);
 
   renderCurrentWeather(weatherData[0]);
-  renderForecast(weatherData.slice(1));
+  renderForecast(weatherData.slice(1)[0]);
 };
 
 const fetchSearchHistory = async () => {
@@ -81,7 +81,7 @@ const renderCurrentWeather = (currentWeather: any): void => {
     currentWeather;
 
   // convert the following to typescript
-  heading.textContent = `${city} (${date})`;
+  heading.textContent = `${city} (${new  Date(date).toDateString()})`;
   weatherIcon.setAttribute(
     'src',
     `https://openweathermap.org/img/w/${icon}.png`
@@ -111,20 +111,21 @@ const renderForecast = (forecast: any): void => {
     forecastContainer.innerHTML = '';
     forecastContainer.append(headingCol);
   }
-
+   console.log(forecast.length);
   for (let i = 0; i < forecast.length; i++) {
     renderForecastCard(forecast[i]);
   }
 };
 
 const renderForecastCard = (forecast: any) => {
+  console.log(forecast);
   const { date, icon, iconDescription, tempF, windSpeed, humidity } = forecast;
 
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } =
     createForecastCard();
 
   // Add content to elements
-  cardTitle.textContent = date;
+  cardTitle.textContent = new Date(date).toDateString();
   weatherIcon.setAttribute(
     'src',
     `https://openweathermap.org/img/w/${icon}.png`
