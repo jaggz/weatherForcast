@@ -1,18 +1,6 @@
 [
 	{
-		"name": "sacramento",
-		"id": "4aab56fb-654d-42c0-bb26-7831f72b365e"
-	},
-	{
-		"name": "washington",
-		"id": "12fec75c-20be-4a30-9ff1-a35d6ce43585"
-	},
-	{
-		"name": "seatle",
-		"id": "0d5c5e91-450e-4269-9afc-a88cc10eb412"
-	},
-	{
-		"name": "seattle",
-		"id": "6ff48bda-91ab-42dc-99f7-55f5e73a1290"
+		"name": "new york",
+		"id": "033bc581-47bd-4dbb-9cbb-fd7cf6c7b275"
 	}
 ]
