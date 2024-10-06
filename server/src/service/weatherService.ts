@@ -116,19 +116,19 @@ class WeatherService {
     try {
       const responseCurrentWeather = await fetch(query[0]);//Fetching current weather
       const responseForecastWeather = await fetch(query[1]);//Fetching Forcast weather for next five days for evry three Hours
-      const currentWeatherData = await responseCurrentWeather.json();//getting json data from responsecurrent data
-      const forecastWeatherData = await responseForecastWeather.json();//getting json data from responseforcast data
-      const currentWeather:Weather= this.parseCurrentWeather(currentWeatherData);// destruct data what we require from whole data for current weather
+      const currentWeatherData = await responseCurrentWeather.json();//getting json data from responseCurrentWeather 
+      const forecastWeatherData = await responseForecastWeather.json();//getting json data from responseForcast
+      const currentWeather:Weather= this.parseCurrentWeather(currentWeatherData);// destruct data that we require from whole CurrentWeather data as current weather of type weather class
       const forecastWeatherArray = [];
       for(let i = 4; i<forecastWeatherData.list.length;i+=8) {//for loop to extract forcast data for five days 
         const forecastWeather:Weather={ //extract data in the object of type weather
-          city:forecastWeatherData.city.name,
-          icon:forecastWeatherData.list[i].weather[0].icon,
-          iconDescription:forecastWeatherData.list[i].weather[0].description,
-          windSpeed:forecastWeatherData.list[i].wind.speed,
-          tempF:forecastWeatherData.list[i].main.temp,
-          humidity:forecastWeatherData.list[i].main.humidity,
-          date:forecastWeatherData.list[i].dt_txt    
+          city:forecastWeatherData.city.name,//city name
+          icon:forecastWeatherData.list[i].weather[0].icon,//icon
+          iconDescription:forecastWeatherData.list[i].weather[0].description,//icon description
+          windSpeed:forecastWeatherData.list[i].wind.speed,//wind speed
+          tempF:forecastWeatherData.list[i].main.temp, // Temprature
+          humidity:forecastWeatherData.list[i].main.humidity,// humidity
+          date:forecastWeatherData.list[i].dt_txt    // date 
         }
         forecastWeatherArray.push(forecastWeather);  //push each object type weather in forecastWeatherArray 
       }
@@ -169,7 +169,7 @@ class WeatherService {
   async getWeatherForCity(city: string) {
     
     this.cityName = city;
-    const weatherLocationData: Coordinates = await this.fetchAndDestructureLocationData(); //callinf function fetchAndDestructureLocationData to get location data
+    const weatherLocationData: Coordinates = await this.fetchAndDestructureLocationData(); //calling function fetchAndDestructureLocationData to get location data
 
     const weatherdata = await this.fetchWeatherData(weatherLocationData); // fetching weather data with location data passing to Method fetchWeatherData 
   
