@@ -46,7 +46,7 @@ class HistoryService {
       throw new Error('state cannot be blank');
     }
 
-    // Add a unique id to the state using uuid package
+    // Add a unique id to the city using uuid package
     const newCity: City = { name: city, id: uuidv4() };
 
     // Get all cities, add the new city, write all the updated cities, return the newCity
